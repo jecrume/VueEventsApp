@@ -1,6 +1,7 @@
 <template>
+  <h1>Events For Good</h1>
   <div class="events">
-    <h1>Events For Good</h1>
+    
     <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
@@ -25,7 +26,7 @@ export default {
       //Get the events data
       EventService.getEvents()
       //wait for the response and save events to the events list
-      .then(response => this.events = response.data)
+      .then(response => {this.events = response.data})
       //catch any errors
       .catch(error =>{ console.log(error)})
 
